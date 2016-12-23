@@ -23,7 +23,7 @@ public class FollowingUsersServiceImpl implements FollowingUsersService{
 			int numberPerPage) {
 		UserDAOImpl user = new UserDAOImpl();
 		ArrayList<String> userIdList = (ArrayList<String>)user.getFollowing(userId, pageIndex, numberPerPage); 
-		ArrayList<User> userList = null;
+		ArrayList<User> userList = new ArrayList<User>();
 		for(int i = 0;i< userIdList.size();i++){
 			User user1 = new User();
 			user1.setName(user.getUserName(userIdList.get(i)));
